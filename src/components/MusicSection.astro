@@ -2,8 +2,16 @@
 // Music Section component - Showcase multiple tracks
 ---
 
-<section id="musica" class="py-20 px-4 bg-gnome-dark scroll-mt-20">
-  <div class="container mx-auto max-w-6xl">
+<section id="musica" class="py-20 px-4 relative scroll-mt-20 overflow-hidden">
+  <!-- Background with forest portal -->
+  <div class="absolute inset-0 bg-gnome-dark z-0"></div>
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
+    style={`background-image: url('${import.meta.env.BASE_URL}images/forest-portal.jpg')`}
+  ></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-gnome-dark/95 via-gnome-dark/90 to-gnome-dark/95 z-0"></div>
+
+  <div class="container mx-auto max-w-6xl relative z-10">
     <div class="text-center mb-12">
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">NUESTRA MÚSICA</h2>
       <div class="w-24 h-1 bg-gnome-accent mx-auto mb-6"></div>
