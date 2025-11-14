@@ -9,6 +9,6 @@ export default defineConfig({
     assets: 'assets',
   },
   image: {
-    domains: ['picsum.photos', 'w.soundcloud.com'],
+    domains: ['w.soundcloud.com'],
   },
 });
