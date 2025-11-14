@@ -77,11 +77,7 @@
   },
   "gitWorkflow": {
     "branch": "claude/add-validation-rules-01YCJxicdgBaeQe2GFifKfZo",
-    "beforeCommit": [
-      "npm run format",
-      "npm run lint:fix",
-      "./scripts/validate-pr.sh"
-    ],
+    "beforeCommit": ["npm run format", "npm run lint:fix", "./scripts/validate-pr.sh"],
     "preCommitHooks": {
       "husky": true,
       "lintStaged": true,

@@ -1,20 +1,139 @@
 ---
-// Header component
+// Header component - Enhanced Hero Section
 ---
 
-<header
-  class="relative min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden"
->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-gnome-dark/90 z-10"></div>
+<header id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Animated background with parallax effect -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-gnome-dark/90 z-10">
+  </div>
   <div
-    id="background-img"
-    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    id="hero-bg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300"
     style={`background-image: url('${import.meta.env.BASE_URL}images/mystery-1527276296537-4729.jpg')`}
   >
   </div>
-  <img
-    src={`${import.meta.env.BASE_URL}images/logo_blanco.png`}
-    alt="BlackGnome"
-    class="relative z-20 max-w-[300px] md:max-w-[500px] w-full h-auto px-4"
-  />
+
+  <!-- Hero content -->
+  <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+    <!-- Logo with fade-in animation -->
+    <img
+      src={`${import.meta.env.BASE_URL}images/logo_blanco.png`}
+      alt="BlackGnome"
+      class="hero-logo mx-auto max-w-[300px] md:max-w-[500px] w-full h-auto mb-8"
+    />
+
+    <!-- Tagline -->
+    <h1 class="hero-title text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+      Potencia. Agresividad. Melodía.
+    </h1>
+
+    <p class="hero-subtitle text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+      Una fusión única de rock intenso con voz melódica y versátil
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href="#musica"
+        class="hero-cta bg-gnome-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+      >
+        🎵 Escucha Nuestro Último Single
+      </a>
+      <a
+        href="#videos"
+        class="hero-cta-secondary border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105"
+      >
+        ▶ Ver Videos
+      </a>
+    </div>
+
+    <!-- Social proof / Quick links -->
+    <div class="mt-12 flex justify-center gap-6 text-gray-400">
+      <a
+        href="https://soundcloud.com/blackgnomeband"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-gnome-accent transition-colors"
+      >
+        <i class="fab fa-soundcloud fa-2x"></i>
+      </a>
+      <a
+        href="https://www.youtube.com/channel/UCWPktd7pMtd0wiqpS23xCpw"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-gnome-accent transition-colors"
+      >
+        <i class="fab fa-youtube fa-2x"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/blackgnomeband/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-gnome-accent transition-colors"
+      >
+        <i class="fab fa-instagram fa-2x"></i>
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <a href="#banda" class="block animate-bounce">
+        <svg
+          class="w-6 h-6 text-white opacity-75"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
 </header>
+
+<style>
+  /* Hero animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-logo {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero-title {
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+
+  .hero-cta,
+  .hero-cta-secondary {
+    animation: fadeInUp 1s ease-out 0.6s both;
+  }
+</style>
+
+<script>
+  // Parallax effect on scroll
+  const heroBg = document.getElementById('hero-bg');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    if (heroBg) {
+      heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+  });
+</script>

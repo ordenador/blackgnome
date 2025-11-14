@@ -1,0 +1,135 @@
+---
+// Music Section component - Showcase multiple tracks
+---
+
+<section id="musica" class="py-20 px-4 bg-gnome-dark scroll-mt-20">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">NUESTRA MÚSICA</h2>
+      <div class="w-24 h-1 bg-gnome-accent mx-auto mb-6"></div>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Escucha nuestros últimos lanzamientos y descubre el sonido de BlackGnome
+      </p>
+    </div>
+
+    <!-- Featured Track -->
+    <div class="bg-gnome-gray rounded-lg p-8 mb-12 shadow-2xl">
+      <div class="flex items-center mb-6">
+        <span class="bg-gnome-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
+          ⭐ DESTACADO
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-4">
+          <div
+            class="aspect-square bg-gradient-to-br from-gnome-accent to-orange-700 rounded-lg flex items-center justify-center shadow-lg"
+          >
+            <div class="text-center text-white p-6">
+              <h3 class="text-3xl font-bold mb-2">BlackGnome</h3>
+              <p class="text-lg opacity-90">Latest Single</p>
+              <div class="mt-4 text-6xl">🎸</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-8">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Último Lanzamiento</h3>
+          <p class="text-gray-400 mb-6">
+            Nuestro más reciente trabajo que combina toda la potencia de BlackGnome en una
+            experiencia sonora única.
+          </p>
+          <div class="soundcloud-embed">
+            <iframe
+              width="100%"
+              height="166"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/440702886&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              class="rounded-lg shadow-lg"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Tracks Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Track Card 1 -->
+      <div class="bg-gnome-gray rounded-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="flex items-start gap-4">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-3xl">🎵</span>
+          </div>
+          <div class="flex-1">
+            <h4 class="text-xl font-bold text-white mb-2">Próximamente</h4>
+            <p class="text-gray-400 text-sm mb-3">Más tracks en camino</p>
+            <a
+              href="https://soundcloud.com/blackgnomeband"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gnome-accent hover:text-orange-600 text-sm font-semibold inline-flex items-center"
+            >
+              Síguenos en SoundCloud →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Track Card 2 -->
+      <div class="bg-gnome-gray rounded-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="flex items-start gap-4">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-3xl">🎸</span>
+          </div>
+          <div class="flex-1">
+            <h4 class="text-xl font-bold text-white mb-2">YouTube Music</h4>
+            <p class="text-gray-400 text-sm mb-3">Videos y más contenido</p>
+            <a
+              href="https://www.youtube.com/channel/UCWPktd7pMtd0wiqpS23xCpw"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gnome-accent hover:text-orange-600 text-sm font-semibold inline-flex items-center"
+            >
+              Ver en YouTube →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Streaming Platforms -->
+    <div class="mt-12 text-center">
+      <h3 class="text-2xl font-bold text-white mb-6">Escúchanos en todas las plataformas</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="https://soundcloud.com/blackgnomeband"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gnome-gray hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2"
+        >
+          <i class="fab fa-soundcloud"></i>
+          SoundCloud
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCWPktd7pMtd0wiqpS23xCpw"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gnome-gray hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2"
+        >
+          <i class="fab fa-youtube"></i>
+          YouTube
+        </a>
+        <button
+          class="bg-gnome-gray text-gray-500 px-6 py-3 rounded-lg cursor-not-allowed inline-flex items-center gap-2"
+          disabled
+        >
+          <i class="fab fa-spotify"></i>
+          Spotify (Próximamente)
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
