@@ -2,6 +2,8 @@
 
 Sitio web oficial de la banda BlackGnome.
 
+🌐 **[Ver sitio en vivo →](https://ordenador.github.io/blackgnome)**
+
 ## Stack Tecnológico 2025
 
 - **Framework**: Astro 4.x
@@ -15,7 +17,7 @@ Sitio web oficial de la banda BlackGnome.
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/triniff/blackgnome.git
+git clone https://github.com/ordenador/blackgnome.git
 
 # Instalar dependencias
 npm install
@@ -49,12 +51,36 @@ Navega a http://localhost:4321 en tu navegador.
 - `npm run lint:fix` - Auto-fix de issues de linting
 - `npm run type-check` - Verifica tipos con TypeScript
 
+## Pre-commit Hooks
+
+El proyecto utiliza **Husky** y **lint-staged** para validación automática antes de cada commit:
+
+### Validaciones automáticas
+
+- ✅ **Prettier**: Formatea código automáticamente
+- ✅ **ESLint**: Lint y auto-fix de JavaScript/TypeScript/Astro
+- ✅ **Stylelint**: Lint y auto-fix de CSS
+- ✅ **Type Check**: Verifica tipos de TypeScript/Astro
+
+### Archivos validados
+
+```json
+{
+  "*.{js,mjs,ts,astro}": ["prettier --write", "eslint --fix"],
+  "*.css": ["prettier --write", "stylelint --fix"],
+  "*.{json,md,yml,yaml}": ["prettier --write"]
+}
+```
+
+Los hooks se instalan automáticamente al ejecutar `npm install`.
+
 ## Estructura del Proyecto
 
 ```
 /
 ├── .github/
 │   └── workflows/       # GitHub Actions (CI/CD)
+├── .husky/              # Git hooks (pre-commit)
 ├── public/              # Assets estáticos
 │   ├── images/         # Imágenes
 │   ├── fonts/          # Fuentes
