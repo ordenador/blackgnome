@@ -1,6 +1,7 @@
 # Validate PR Changes
 
 Executes all pipeline validations before committing changes. This ensures your code passes:
+
 - Prettier formatting checks
 - ESLint JavaScript/TypeScript linting
 - Stylelint CSS linting
@@ -26,6 +27,7 @@ If all validations pass, your code is ready for commit and PR.
 ## Quick fixes:
 
 If validation fails, you can auto-fix formatting and linting issues with:
+
 ```bash
 npm run format && npm run lint:fix
 ```

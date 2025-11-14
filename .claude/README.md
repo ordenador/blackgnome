@@ -39,13 +39,13 @@ npm run test
 
 All code must pass these 5 validations:
 
-| # | Validation | Command | Auto-Fix | Must Pass |
-|---|-----------|---------|----------|-----------|
-| 1 | Prettier Formatting | `npm run format:check` | `npm run format` | ✅ Yes |
-| 2 | ESLint (JS/TS) | `npm run lint:js` | `npm run lint:fix` | ✅ Yes |
-| 3 | Stylelint (CSS) | `npm run lint:css` | `npm run lint:fix` | ✅ Yes |
-| 4 | TypeScript Check | `npm run type-check` | Manual | ✅ Yes |
-| 5 | Build Test | `npm run build` | Manual | ✅ Yes |
+| #   | Validation          | Command                | Auto-Fix           | Must Pass |
+| --- | ------------------- | ---------------------- | ------------------ | --------- |
+| 1   | Prettier Formatting | `npm run format:check` | `npm run format`   | ✅ Yes    |
+| 2   | ESLint (JS/TS)      | `npm run lint:js`      | `npm run lint:fix` | ✅ Yes    |
+| 3   | Stylelint (CSS)     | `npm run lint:css`     | `npm run lint:fix` | ✅ Yes    |
+| 4   | TypeScript Check    | `npm run type-check`   | Manual             | ✅ Yes    |
+| 5   | Build Test          | `npm run build`        | Manual             | ✅ Yes    |
 
 ## 🔄 PR Workflow
 
@@ -84,6 +84,7 @@ See `config.json` for detailed configuration.
 ## 🤖 Claude Rules (.claude/rules.md)
 
 The main rules file explains:
+
 - ✅ What must be validated before committing
 - ✅ How to fix common issues
 - ✅ What each validation checks
@@ -94,9 +95,11 @@ The main rules file explains:
 ## 🛠️ Slash Commands
 
 ### `/validate-pr`
+
 Runs all 5 validations to ensure code is ready for PR.
 
 Usage:
+
 ```
 /validate-pr
 ```
@@ -112,14 +115,17 @@ Usage:
 ## ❓ Troubleshooting
 
 ### Validations failing locally but CI passes?
+
 - Run `npm install` to ensure dependencies are up to date
 - Clear cache: `rm -rf node_modules/.cache`
 
 ### Pre-commit hook preventing commits?
+
 - Run `npm run lint:fix && npm run format` to auto-fix
 - Then commit again
 
 ### TypeScript errors after changes?
+
 - Check the error messages carefully
 - Ensure correct type annotations
 - Add null checks where needed

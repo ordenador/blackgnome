@@ -3,6 +3,7 @@
 ## 🎯 What You Need to Know
 
 Before committing code changes for a PR, **you MUST validate** that:
+
 1. ✅ Code formatting is correct (Prettier)
 2. ✅ JavaScript/TypeScript passes linting (ESLint)
 3. ✅ CSS passes linting (Stylelint)
@@ -12,16 +13,19 @@ Before committing code changes for a PR, **you MUST validate** that:
 ## ⚡ Quick Commands
 
 ### Auto-fix most issues:
+
 ```bash
 npm run format && npm run lint:fix
 ```
 
 ### Validate all checks:
+
 ```bash
 ./scripts/validate-pr.sh
 ```
 
 Or use the Claude slash command:
+
 ```
 /validate-pr
 ```
@@ -39,29 +43,34 @@ Or use the Claude slash command:
 ## 🔧 What to Do If Validation Fails
 
 ### Prettier formatting fails:
+
 ```bash
 npm run format
 ```
 
 ### ESLint fails:
+
 ```bash
 npm run lint:js        # See what's wrong
 npm run lint:fix       # Auto-fix
 ```
 
 ### Stylelint (CSS) fails:
+
 ```bash
 npm run lint:css       # See what's wrong
 npm run lint:fix       # Auto-fix CSS
 ```
 
 ### TypeScript type errors:
+
 - No auto-fix available
 - Read the error messages
 - Fix the code manually
 - Common issues: missing types, null checks, imports
 
 ### Build fails:
+
 - Check the error message
 - Ensure all imports are correct
 - Verify components are valid
@@ -70,6 +79,7 @@ npm run lint:fix       # Auto-fix CSS
 ## 📚 Full Documentation
 
 See `.claude/rules.md` for complete details about:
+
 - What each validation checks
 - How to fix issues
 - Configuration files
@@ -78,6 +88,7 @@ See `.claude/rules.md` for complete details about:
 ## ✅ You're Ready!
 
 Now when you work on code:
+
 1. **Make changes** on your feature branch
 2. **Auto-fix issues**: `npm run format && npm run lint:fix`
 3. **Validate everything**: `./scripts/validate-pr.sh`
