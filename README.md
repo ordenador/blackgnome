@@ -2,7 +2,7 @@
 
 Sitio web oficial de la banda BlackGnome.
 
-🌐 **[Ver sitio en vivo →](https://triniff.github.io/blackgnome)**
+🌐 **[Ver sitio en vivo →](https://ordenador.github.io/blackgnome)**
 
 ## Stack Tecnológico 2025
 
