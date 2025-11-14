@@ -1,0 +1,24 @@
+{
+  "featuredVideo": {
+    "id": "YSMCRWWaxqU",
+    "title": "Underwater",
+    "artist": "BlackGnome"
+  },
+  "gridVideos": [
+    {
+      "id": "tp99gzX891M",
+      "title": "Demon in Love",
+      "artist": "BlackGnome"
+    },
+    {
+      "id": "45lgS6qa29w",
+      "title": "Pesadilla",
+      "artist": "BlackGnome"
+    },
+    {
+      "id": "lAVIEHT0KQQ",
+      "title": "My Destiny",
+      "artist": "BlackGnome"
+    }
+  ]
+}
