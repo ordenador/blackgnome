@@ -1,0 +1,91 @@
+{
+  "name": "blackgnome",
+  "description": "Astro-based website with band information and styling",
+  "validations": {
+    "format": {
+      "name": "Prettier Format Check",
+      "command": "npm run format:check",
+      "autoFix": "npm run format",
+      "required": true,
+      "description": "Validates code formatting consistency"
+    },
+    "lint:js": {
+      "name": "ESLint JavaScript/TypeScript",
+      "command": "npm run lint:js",
+      "autoFix": "npm run lint:fix",
+      "required": true,
+      "description": "Checks JavaScript/TypeScript code quality and rules"
+    },
+    "lint:css": {
+      "name": "Stylelint CSS",
+      "command": "npm run lint:css",
+      "autoFix": "npm run lint:fix",
+      "required": true,
+      "description": "Validates CSS syntax and Tailwind rules"
+    },
+    "type-check": {
+      "name": "TypeScript Type Check",
+      "command": "npm run type-check",
+      "autoFix": null,
+      "required": true,
+      "description": "Strict TypeScript validation with Astro"
+    },
+    "build": {
+      "name": "Astro Build",
+      "command": "npm run build",
+      "autoFix": null,
+      "required": true,
+      "description": "Builds entire project and validates all components"
+    }
+  },
+  "scripts": {
+    "validate": "./scripts/validate-pr.sh",
+    "format:auto": "npm run format && npm run lint:fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:fix": "eslint . --fix && stylelint 'src/**/*.css' --fix",
+    "type-check": "astro check",
+    "build": "astro check && astro build"
+  },
+  "tools": {
+    "prettier": {
+      "config": ".prettierrc",
+      "semicolons": true,
+      "singleQuotes": true,
+      "tabWidth": 2,
+      "trailingComma": "es5",
+      "printWidth": 100,
+      "plugins": ["prettier-plugin-astro"]
+    },
+    "eslint": {
+      "config": "eslint.config.js",
+      "supportsFiles": [".js", ".mjs", ".ts", ".astro"],
+      "ignores": ["dist/", "node_modules/", ".astro/", "old-webpack-setup/"]
+    },
+    "stylelint": {
+      "config": ".stylelintrc.json",
+      "ignores": ["old-webpack-setup/", "dist/", ".astro/"]
+    },
+    "typescript": {
+      "config": "tsconfig.json",
+      "extends": "astro/tsconfigs/strict",
+      "strict": true
+    }
+  },
+  "gitWorkflow": {
+    "branch": "claude/add-validation-rules-01YCJxicdgBaeQe2GFifKfZo",
+    "beforeCommit": [
+      "npm run format",
+      "npm run lint:fix",
+      "./scripts/validate-pr.sh"
+    ],
+    "preCommitHooks": {
+      "husky": true,
+      "lintStaged": true,
+      "autoFix": true
+    }
+  }
+}
