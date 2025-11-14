@@ -1,0 +1,153 @@
+---
+// Navigation component with sticky header and mobile menu
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center">
+        <img
+          src={`${import.meta.env.BASE_URL}images/logo_blanco.png`}
+          alt="BlackGnome"
+          class="h-12 w-auto"
+        />
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#inicio" class="nav-link text-white hover:text-gnome-accent transition-colors">
+          Inicio
+        </a>
+        <a href="#banda" class="nav-link text-white hover:text-gnome-accent transition-colors">
+          La Banda
+        </a>
+        <a href="#musica" class="nav-link text-white hover:text-gnome-accent transition-colors">
+          Música
+        </a>
+        <a href="#videos" class="nav-link text-white hover:text-gnome-accent transition-colors">
+          Videos
+        </a>
+        <a
+          href="#contacto"
+          class="bg-gnome-accent hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-colors font-semibold"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-white focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            id="menu-icon"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+          <path
+            id="close-icon"
+            class="hidden"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gnome-dark border-t border-gray-800">
+    <div class="container mx-auto max-w-6xl px-4 py-4">
+      <a
+        href="#inicio"
+        class="block py-3 text-white hover:text-gnome-accent transition-colors mobile-nav-link"
+      >
+        Inicio
+      </a>
+      <a
+        href="#banda"
+        class="block py-3 text-white hover:text-gnome-accent transition-colors mobile-nav-link"
+      >
+        La Banda
+      </a>
+      <a
+        href="#musica"
+        class="block py-3 text-white hover:text-gnome-accent transition-colors mobile-nav-link"
+      >
+        Música
+      </a>
+      <a
+        href="#videos"
+        class="block py-3 text-white hover:text-gnome-accent transition-colors mobile-nav-link"
+      >
+        Videos
+      </a>
+      <a
+        href="#contacto"
+        class="block py-3 text-gnome-accent hover:text-orange-600 transition-colors font-semibold mobile-nav-link"
+      >
+        Contacto
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Navigation scroll effect
+  const nav = document.getElementById('main-nav');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 100) {
+      nav?.classList.add('bg-black/95', 'backdrop-blur-sm', 'shadow-lg');
+    } else {
+      nav?.classList.remove('bg-black/95', 'backdrop-blur-sm', 'shadow-lg');
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+
+  // Smooth scroll for all navigation links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e: Event) {
+      e.preventDefault();
+      const target = document.querySelector(
+        (e.currentTarget as HTMLAnchorElement).getAttribute('href') || ''
+      );
+      if (target) {
+        const offsetTop = (target as HTMLElement).offsetTop - 80; // Account for fixed nav
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+</script>

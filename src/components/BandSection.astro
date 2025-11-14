@@ -1,37 +1,86 @@
 ---
-// Band Section component
+// Band Section component - About the band
 ---
 
-<section class="py-16 px-4 bg-gnome-gray">
+<section id="banda" class="py-20 px-4 bg-gnome-gray scroll-mt-20">
   <div class="container mx-auto max-w-6xl">
-    <div class="titulo-seccion">
-      <h4>LA BANDA</h4>
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">LA BANDA</h2>
+      <div class="w-24 h-1 bg-gnome-accent mx-auto"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mt-8">
-      <div class="md:col-span-5">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5 band-image">
         <img
           src="/images/877213-scary-halloween-background-images-1920x1080-free-download.jpg"
           alt="BlackGnome Band"
-          class="w-full h-auto rounded-lg shadow-lg"
+          class="w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
         />
       </div>
 
       <div class="md:col-span-7 flex flex-col justify-center">
-        <p class="text-lg mb-6 leading-relaxed">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">Rock Con Alma</h3>
+        <p class="text-lg mb-6 leading-relaxed text-gray-300">
           Somos una banda que fusiona la potencia y la agresividad de nuestra música con una voz
-          melódica y versátil, haciendo de BlackGnome una banda distintiva.
+          melódica y versátil, haciendo de <span class="text-gnome-accent font-semibold"
+            >BlackGnome</span
+          > una banda distintiva en la escena del rock.
+        </p>
+        <p class="text-lg mb-6 leading-relaxed text-gray-300">
+          Nuestra música explora la intensidad emocional a través de riffs contundentes y melodías
+          que se quedan grabadas en la memoria. Cada canción es una experiencia única que combina la
+          energía del metal con la sensibilidad del rock melódico.
         </p>
 
-        <div class="soundcloud-embed">
-          <iframe
-            width="100%"
-            height="166"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/440702886&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            class="rounded"></iframe>
+        <!-- Key features -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div class="flex items-start">
+            <span class="text-gnome-accent text-2xl mr-3">🎸</span>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Riffs Potentes</h4>
+              <p class="text-gray-400 text-sm">Guitarras agresivas y contundentes</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="text-gnome-accent text-2xl mr-3">🎤</span>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Voz Versátil</h4>
+              <p class="text-gray-400 text-sm">De lo melódico a lo agresivo</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="text-gnome-accent text-2xl mr-3">🥁</span>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Ritmo Implacable</h4>
+              <p class="text-gray-400 text-sm">Bases sólidas y dinámicas</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="text-gnome-accent text-2xl mr-3">⚡</span>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Energía Pura</h4>
+              <p class="text-gray-400 text-sm">Shows inolvidables</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .band-image {
+    animation: fadeInLeft 1s ease-out;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
